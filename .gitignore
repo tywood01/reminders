@@ -9,3 +9,4 @@ wheels/
 *.db
 # Virtual environments
 .venv
+node_modules
