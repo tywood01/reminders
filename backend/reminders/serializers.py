@@ -5,4 +5,4 @@ from rest_framework import serializers
 class ReminderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reminder
-        fields = ["id", "title", "description", "date", "time"]
+        fields = "__all__"
