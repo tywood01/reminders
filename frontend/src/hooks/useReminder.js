@@ -8,11 +8,12 @@
 import { API_URL } from "../constants";
 import { useState, useEffect } from "react";
 
+
 export function useReminderList() {
     
     const [reminders, setReminders] = useState([]);
 
-    const [loading, setLoading] = useState(False);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null)
 
     useEffect(
@@ -48,20 +49,8 @@ export function useReminderList() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 export function useReminderCreate() {
+    console.log("in useremindercreate");
     const [name, setName] = useState("");
     // Same loading states as before, since
     // we want to show some loading indicators
@@ -75,6 +64,8 @@ export function useReminderCreate() {
      * @param {SubmitEvent} event The submit event from the form.
      */
     const createReminder = (event) => {
+        console.log("in create reminder");
+
       event.preventDefault();
       setLoading(true);
       fetch(`${API_URL}/reminders/`, {
@@ -87,14 +78,19 @@ export function useReminderCreate() {
         }),
       })
         .then((response) => {
+            console.log("in fetch");
+
           setLoading(false);
           if (response.ok) {
+            console.log("in ok");
+
             setSuccessful(true);
             return;
           }
           throw new Error("Uh Oh!");
         })
         .catch((err) => {
+            console.log(err);
           setError(err);
           setSuccessful(false);
         });
