@@ -7,5 +7,5 @@ from reminders import models, serializers
 class ReminderViewSet(ModelViewSet):
     """Gets the basic CRUD operations for the reminders"""
 
-    queryset = models.Task.objects.all()
+    queryset = models.Reminder.objects.all()
     serializer_class = serializers.ReminderSerializer
