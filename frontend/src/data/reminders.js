@@ -39,3 +39,19 @@ export async function createReminder(event, name, body) {
 
   return await response.json();
 }
+
+
+export async function deleteReminder(id) {
+
+  const response = await fetch(`${API_URL}/reminders/${id}/`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to delete the reminder");
+  }
+
+}

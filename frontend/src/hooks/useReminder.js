@@ -1,6 +1,6 @@
 /**
  * useReminder.js
- * Tytus Woodburn
+ * Tytus Woodburn, Reagan Zierke
  * 
  * Reminder Hooks
  */
@@ -105,3 +105,7 @@ export function useReminderCreate() {
       createReminder,
     };
   }
+
+export function useReminderDelete() {
+    
+}
