@@ -1,6 +1,6 @@
 /**
  * ReminderList.jsx
- * Reagan Zierke
+ * Reagan Zierke, Tytus Woodburn
  * 
  * Reminder List Page
  */

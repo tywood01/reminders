@@ -1,6 +1,6 @@
 /**
  * ReminderAdd.jsx
- * Reagan Zierke
+ * Reagan Zierke, Tytus Woodburn
  * 
  * Page for adding a new reminder
  */
