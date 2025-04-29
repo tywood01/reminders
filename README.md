@@ -8,12 +8,26 @@ Users can:
 
 ## Usage
 ### Clone Down
-To clone down run
-```git clone https://github.com/tywood01/reminders.git```
-Then run
-```uv sync```
+To clone down run ```git clone https://github.com/tywood01/reminders.git```
+
+Then run ```uv sync```
+
 Finally to handle migrations run
-```cd backend/`
-uv run manage.py migrate```
+```
+cd backend/
+uv run manage.py migrate
+```
 
 ### Run App
+To run the app
+1. Run
+```
+cd backend/
+uv run manage.py runserver
+```
+2. Run
+```
+cd ..frontend/
+npm run dev
+```
+3. Then connect to the local host link provided in the terminal.
