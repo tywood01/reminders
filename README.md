@@ -1,6 +1,6 @@
 # Reminders
 ## What It Is
-Reminders is an app that allows users to create web reminders. 
+**Reminders** is an app that allows users to create web reminders. 
 Users can:
 - create reminders using a calendar widget
 - modify reminders
@@ -31,3 +31,8 @@ cd ..frontend/
 npm run dev
 ```
 3. Then connect to the local host link provided in the terminal.
+
+## Contact Info
+### Tytus Woodburn : tytus.woodburn@student.cune.edu
+### Andrew Fynaardt : andrew.fynaardt@student.cune.edu
+### Reagan Zierke : reagan.zierke@student.cune.edu
