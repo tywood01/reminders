@@ -1,6 +1,6 @@
 """
 tests.py
-Andrew Fynaardt, Tytus Woodburn
+Andrew Fynaardt, Tytus Woodburn, Reagan Zierke
 04/28/2025
 
 Reminder Tests
@@ -10,6 +10,7 @@ from django.test import TestCase
 from reminders.models import Reminder
 from datetime import datetime
 from django.utils import timezone
+from django.urls import reverse
 
 #This is bad but it works
 now = timezone.now()
@@ -48,3 +49,26 @@ class ReminderTestCase(TestCase):
         except:
             movie = None
         self.assertIsNone(movie)
+
+
+class ReminderDeleteTestCase(TestCase):
+    '''
+    A test for deleting reminders
+    '''
+
+    def setUp(self):
+        self.reminder = Reminder.objects.create(
+            name="Test Reminder",
+            body="This is a test reminder.",
+            recurring="no"
+        )
+        self.delete_url = reverse('reminder-detail', args=[self.reminder.id])  
+
+    def test_delete_reminder(self):
+        self.assertEqual(Reminder.objects.count(), 1)
+
+        response = self.client.delete(self.delete_url)
+
+        self.assertEqual(response.status_code, 204)
+
+        self.assertEqual(Reminder.objects.count(), 0)
