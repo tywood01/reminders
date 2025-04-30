@@ -38,6 +38,7 @@ export function ReminderUpdate() {
         if (reminder) {
             setName(reminder.name);
             setBody(reminder.body);
+            /* Must format date properly. */
             const localDatetime = new Date(reminder.datetime);
             const formatted = localDatetime.toISOString().slice(0, 16);
             setDatetime(formatted);
