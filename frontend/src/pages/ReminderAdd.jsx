@@ -30,18 +30,14 @@ export function ReminderCreate() {
 	// 	useTaskCreate();
 	const { isPending, isError, mutate } = useMutation({
 		mutationFn: (event) => {
-            console.log("inside mutate");
 
-			return createReminder(event, name, body);
+			return createReminder(event, name, body, datetime, recur);
 		},
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: ["reminders"] });
 			navigate("/");
 		},
 	});
-	// if (successful) {
-	// 	navigate("/");
-	// }
 
 	if (isPending) {
 		return (
@@ -82,7 +78,9 @@ export function ReminderCreate() {
 					onChange={(e) => setDatetime(e.target.value)}
 				/>
                 <h2>Recurring?</h2>
-                <select onChange={(e) => setRecur(e.target.value)}>
+                <select onChange={(e) => {
+                    setRecur(e.target.value);
+                    }}>
                     {recurOptions.map((option) => (
                         <option key={option.value} value={option.value}>
                           {option.name}

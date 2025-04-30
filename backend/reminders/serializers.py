@@ -3,7 +3,7 @@ serializers.py
 Tytus Woodburn
 04/30/2025
 
-Reminder Tests
+Reminder Serializers
 """
 
 from reminders import models
